@@ -9,8 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "insta-primary": "#8A226F",
+        "insta-red": "#FE2C55",
+        "insta-black": "#000000E5",
+        "insta-grey": "#00000099",
+        "insta-secondary": "#FFEAFA",
       },
     },
   },
