@@ -1,7 +1,6 @@
-import { splashScreenData } from "@/utils/dummyData";
 import Image from "next/image"
 import Link from "next/link";
-
+import { splashScreenData } from "@/utils/dummyData";
 
 export default function Home() {
   return (

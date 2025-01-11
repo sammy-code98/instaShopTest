@@ -3,10 +3,14 @@
 import { useGetStartedContext } from '@/app/get-started/context/GetStartedContext';
 import { useState } from 'react';
 import { RiCameraAiLine } from 'react-icons/ri';
+import { useRouter } from 'next/navigation';
+
 
 export default function StoreForm() {
   const { formData, setFormData, validateStep, errors } = useGetStartedContext();
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const router = useRouter();
+
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -21,12 +25,11 @@ export default function StoreForm() {
   };
 
 
-
   const handleNext = async (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = await validateStep(3);
     if (isValid) {
-      // Logic to finalize the form or navigate to the next page
+      router.push("/create-product")
       console.log(formData, "Form completed successfully!");
     }
   };
@@ -110,7 +113,7 @@ export default function StoreForm() {
         {errors.category && <p className="text-red-500 text-sm">{errors.category}</p>}
       </div>
 
-      <div className="space-y-4  w-full">
+      <div className="space-y-4 absolute bottom-0 w-full">
         <hr />
         <button
           type="submit"
