@@ -1,5 +1,6 @@
 import { splashScreenData } from "@/utils/dummyData";
 import Image from "next/image"
+import Link from "next/link";
 
 
 export default function Home() {
@@ -23,7 +24,9 @@ export default function Home() {
       </div>
 
       <div className="py-6 w-full">
+        <Link href={"/get-started"} >
         <button className="bg-insta-primary text-white w-full py-2 rounded-full shadow-md font-medium">Get started</button>
+        </Link>
       </div>
     </div>
   );
